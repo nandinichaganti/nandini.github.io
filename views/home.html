@@ -1,13 +1,53 @@
-<div class="profile-card">
-    <img src="https://avatars.githubusercontent.com/u/your-github-id" alt="Nandini Chaganti" class="profile-img">
-    <h1>Hello, I'm <span class="highlight">Nandini Chaganti</span>!</h1>
-    <p class="intro">
-        Passionate about <span class="highlight">web development</span>, technology, and creative problem-solving.<br>
-        I love building interactive websites and learning new things every day.
-    </p>
-    <p>
-        This site is a showcase of my <span class="highlight">projects</span>, interests, and journey as a developer.<br>
+<div class="home-fullscreen">
+    <h1 class="portfolio-header">
+        <span class="highlight-pink">Nandini Chaganti Portfolio</span>
+    </h1>
+    <div class="roles-container">
+        <span class="intro-text">I'm a </span>
+        <span id="role-text" class="role-text highlight-pink"></span>
+    </div>
+    <div class="showcase-text">
+        This site is a showcase of my projects, interests, and journey as a developer.<br>
         <strong>Explore to learn more about me and my work!</strong>
-    </p>
-    <a href="#about" class="cta-btn">Discover More</a>
+    </div>
+    <a href="#about" class="cta-btn-pink discover-btn">Discover More</a>
 </div>
+<script>
+const roles = [
+    "Full Stack Developer",
+    "Data Engineer",
+    "Graph Database Engineer"
+];
+let roleIndex = 0;
+let charIndex = 0;
+const roleText = document.getElementById("role-text");
+
+function typeRole() {
+    if (charIndex < roles[roleIndex].length) {
+        roleText.textContent += roles[roleIndex][charIndex];
+        charIndex++;
+        setTimeout(typeRole, 90);
+    } else {
+        setTimeout(eraseRole, 1200);
+    }
+}
+
+function eraseRole() {
+    if (charIndex > 0) {
+        roleText.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseRole, 40);
+    } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        roleText.textContent = "";
+        charIndex = 0;
+        setTimeout(typeRole, 400);
+    }
+}
+
+// Start the animation after DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+    roleText.textContent = "";
+    typeRole();
+});
+</script>

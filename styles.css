@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #111;
+    color: #fff;
 }
 
 header {
@@ -41,6 +43,12 @@ main {
     position: relative;
 }
 
+.profile-card.dark-theme {
+    background: linear-gradient(135deg, #111 60%, #ff69b4 100%);
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(255, 105, 180, 0.18);
+}
+
 .profile-img {
     width: 110px;
     height: 110px;
@@ -53,6 +61,11 @@ main {
 
 .highlight {
     color: #6366f1;
+    font-weight: bold;
+}
+
+.highlight-pink {
+    color: #ff69b4;
     font-weight: bold;
 }
 
@@ -77,4 +90,96 @@ main {
 
 .cta-btn:hover {
     background: #4338ca;
+}
+
+.cta-btn-pink {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 28px;
+    background: #ff69b4;
+    color: #fff;
+    border-radius: 24px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.18);
+    transition: background 0.2s;
+}
+
+.cta-btn-pink:hover {
+    background: #c2185b;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.home-fullscreen {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #111 70%, #ff69b4 100%);
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0 20px;
+    position: relative;
+}
+
+.portfolio-header {
+    font-size: 2.8em;
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.roles-container {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.role-text {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-right: 2px solid #ff69b4;
+    padding-right: 8px;
+    min-width: 280px;
+    text-align: center;
+    animation: blink-caret 0.8s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ff69b4; }
+}
+
+.showcase-text {
+    font-size: 1.15em;
+    margin-bottom: 60px;
+    text-align: center;
+    max-width: 480px;
+    line-height: 1.5;
+}
+
+.discover-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+}
+
+body.home-active header {
+    display: none;
 }
