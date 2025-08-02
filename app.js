@@ -2,6 +2,7 @@
 function loadContent() {
     const hash = window.location.hash || "#home";
     const app = document.getElementById("app");
+    document.body.classList.toggle("home-active", hash === "#home");
 
     // Fetch the corresponding HTML file
     fetch(`views/${hash.substring(1)}.html`)
